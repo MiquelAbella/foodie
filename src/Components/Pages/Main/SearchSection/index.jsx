@@ -3,7 +3,10 @@ import { RecipeCard } from "../../../Cards/RecipeCard";
 import { BiSearchAlt, BiSortDown, BiSortUp } from "react-icons/bi";
 import { useState } from "react";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 export const SearchSection = () => {
+  const [recipeQuery, setRecipeQuery] = useState("");
   const [recipes, setRecipes] = useState(appleCakes);
   const [isAscending, setIsAscending] = useState(true);
 
@@ -23,6 +26,18 @@ export const SearchSection = () => {
     setIsAscending(!isAscending);
   };
 
+  const handleInputChange = (e) => {
+    setRecipeQuery(e.target.value);
+  };
+
+  const handleSearch = async () => {
+    const res = await fetch(
+      `https://api.spoonacular.com/recipes/search?query=${recipeQuery}&number=12&apiKey=${API_KEY}`
+    );
+    const data = await res.json();
+    setRecipes(data.results);
+  };
+
   return (
     <div className="flex flex-col items-center justify-start">
       <div className="flex items-center text-gray-500 border-b border-gray-500 text-3xl">
@@ -30,8 +45,10 @@ export const SearchSection = () => {
           id="search-input"
           className="px-4 py-2 w-[80vw] md:w-[40vw] outline-none"
           placeholder="Strawberry cake"
+          value={recipeQuery}
+          onChange={handleInputChange}
         />
-        <BiSearchAlt />
+        <BiSearchAlt onClick={handleSearch} />
       </div>
       <div className="pt-4 flex items-center gap-6">
         <label className="text-gray-500">Sort by :</label>
@@ -55,9 +72,13 @@ export const SearchSection = () => {
         )}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 p-6 md:p-12 lg:p-20">
-        {recipes.map((recipe, idx) => {
-          return <RecipeCard key={idx} recipe={recipe} />;
-        })}
+        {recipes.length ? (
+          recipes.map((recipe, idx) => {
+            return <RecipeCard key={idx} recipe={recipe} />;
+          })
+        ) : (
+          <p>No recipes match this search</p>
+        )}
       </div>
     </div>
   );

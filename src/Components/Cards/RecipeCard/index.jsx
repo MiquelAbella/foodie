@@ -30,7 +30,7 @@ export const RecipeCard = ({ recipe }) => {
     <>
       <Toaster position="bottom-right" reverseOrder={false} />
       <div
-        className="rounded-md relative cursor-pointer mt-4 flex flex-col justify-between gap-6 border-b border-gray-400"
+        className="rounded-md relative cursor-pointer flex flex-col justify-between gap-6 border-b border-gray-400"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleNavigate}
