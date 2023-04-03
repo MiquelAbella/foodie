@@ -5,7 +5,7 @@ export const menuReducer = (state = {}, action) => {
     case menuTypes.add:
       return { ...state, menu: [...state.menu, action.payload] };
     default:
-      state;
+      return state;
   }
 };
 

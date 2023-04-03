@@ -30,17 +30,17 @@ export const RecipeCard = ({ recipe }) => {
     <>
       <Toaster position="bottom-right" reverseOrder={false} />
       <div
-        className="rounded-md relative cursor-pointer flex flex-col justify-between gap-6 border-b border-gray-400"
+        className="rounded-md relative cursor-pointer flex flex-col justify-between gap-6 border-b border-gray-400 duration-300 hover:bg-gray-200"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleNavigate}
       >
         <div
-          className={`absolute right-2 top-2 p-2 bg-white rounded-full hover:scale-95 ${
+          className={`absolute right-2 top-2 p-2 bg-gray-500 rounded-full hover:scale-95 ${
             !isHovered && "hidden"
           }`}
         >
-          <MdOutlineRestaurant className="text-2xl" onClick={handleAddToMenu} />
+          <MdOutlineRestaurant className="text-lg text-white" onClick={handleAddToMenu} />
         </div>
         <img
           className="rounded-md w-full object-cover "
