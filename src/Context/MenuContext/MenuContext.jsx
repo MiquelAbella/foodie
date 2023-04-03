@@ -18,11 +18,19 @@ export const MenuProvider = ({ children }) => {
     return dispatch({ type: menuTypes.add, payload: dish });
   };
 
+  const deleteFromMenu = (dish) => {
+    const filtered = state.menu.filter((recipe) => {
+      return recipe.id !== dish.id;
+    });
+    return dispatch({ type: menuTypes.delete, payload: [...filtered] });
+  };
+
   return (
     <MenuContext.Provider
       value={{
         ...state,
         addToMenu,
+        deleteFromMenu,
       }}
     >
       {children}

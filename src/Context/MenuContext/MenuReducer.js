@@ -4,6 +4,8 @@ export const menuReducer = (state = {}, action) => {
   switch (action.type) {
     case menuTypes.add:
       return { ...state, menu: [...state.menu, action.payload] };
+    case menuTypes.delete:
+      return { ...state, menu: action.payload };
     default:
       return state;
   }

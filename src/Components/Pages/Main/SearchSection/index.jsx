@@ -2,8 +2,7 @@ import { appleCakes } from "../../../../data";
 import { RecipeCard } from "../../../Cards/RecipeCard";
 import { BiSearchAlt, BiSortDown, BiSortUp } from "react-icons/bi";
 import { useState } from "react";
-
-const API_KEY = import.meta.env.VITE_API_KEY;
+import { handleSearch } from "../../../../API/recipes";
 
 export const SearchSection = () => {
   const [recipeQuery, setRecipeQuery] = useState("");
@@ -30,12 +29,9 @@ export const SearchSection = () => {
     setRecipeQuery(e.target.value);
   };
 
-  const handleSearch = async () => {
-    const res = await fetch(
-      `https://api.spoonacular.com/recipes/search?query=${recipeQuery}&number=12&apiKey=${API_KEY}`
-    );
-    const data = await res.json();
-    setRecipes(data.results);
+  const handleSubmitSearch = async () => {
+    const recipes = await handleSearch(recipeQuery);
+    setRecipes(recipes);
   };
 
   return (
@@ -48,7 +44,7 @@ export const SearchSection = () => {
           value={recipeQuery}
           onChange={handleInputChange}
         />
-        <BiSearchAlt onClick={handleSearch} />
+        <BiSearchAlt onClick={handleSubmitSearch} />
       </div>
       <div className="pt-4 flex items-center gap-6">
         <label className="text-gray-500">Sort by :</label>
