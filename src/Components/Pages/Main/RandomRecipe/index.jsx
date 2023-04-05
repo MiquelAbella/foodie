@@ -12,12 +12,12 @@ export const RandomRecipe = () => {
   const { setPrevRoute } = useRouting();
 
   const getRandomRecipe = async () => {
-    // const res = await fetch(
-    //   `https://api.spoonacular.com/recipes/random?number=1&apiKey=${API_KEY}`
-    // );
-    // const data = await res.json();
+    const res = await fetch(
+      `https://api.spoonacular.com/recipes/random?number=1&apiKey=${API_KEY}`
+    );
+    const data = await res.json();
     setRecipe(data);
-    // console.log(JSON.stringify(data));
+    console.log(JSON.stringify(data));
   };
 
   const handleSetPrevRoute = () => {

@@ -21,12 +21,12 @@ export const CategoryPage = () => {
   const filtered = cuisines.filter((cuisine) => {
     return cuisine.type.toLowerCase() === category;
   })[0];
-  //   const { data, isLoading, error } = useQuery({
-  //     queryKey: [category],
-  //     queryFn: async () => await getRecipesByCuisine(category),
-  //   });
-  //   console.log(JSON.stringify(data));
-  const isLoading = false;
+    const { data, isLoading, error } = useQuery({
+      queryKey: [category],
+      queryFn: async () => await getRecipesByCuisine(category),
+    });
+    console.log(JSON.stringify(data));
+//   const isLoading = false;
 
   return (
     <div className="flex flex-col items-center justify-center">
