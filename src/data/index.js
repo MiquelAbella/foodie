@@ -5,7 +5,7 @@ export const appleCakes = [
     readyInMinutes: 45,
     servings: 12,
     sourceUrl:
-      "http://www.foodista.com/recipe/22CXSPRX/favorite-moist-chocolate-cake",
+      "https://www.foodista.com/recipe/22CXSPRX/favorite-moist-chocolate-cake",
     image: "Favorite-Moist-Chocolate-Cake-642648.jpg",
   },
   {
@@ -24,7 +24,7 @@ export const appleCakes = [
     readyInMinutes: 45,
     servings: 12,
     sourceUrl:
-      "http://www.foodista.com/recipe/46G6555H/fresh-strawberry-yogurt-cake",
+      "https://www.foodista.com/recipe/46G6555H/fresh-strawberry-yogurt-cake",
     image: "Fresh-Strawberry-Yogurt-Cake-643615.jpg",
   },
   {
@@ -41,7 +41,7 @@ export const appleCakes = [
     title: "Biscuits cake",
     readyInMinutes: 45,
     servings: 12,
-    sourceUrl: "http://www.foodista.com/recipe/G7V2CRV3/biscuits-cake",
+    sourceUrl: "https://www.foodista.com/recipe/G7V2CRV3/biscuits-cake",
     image: "Biscuits-cake-635015.jpg",
   },
   {
@@ -50,7 +50,7 @@ export const appleCakes = [
     readyInMinutes: 45,
     servings: 8,
     sourceUrl:
-      "http://www.foodista.com/recipe/TLVW8NWN/strawberries-and-cream-cake",
+      "https://www.foodista.com/recipe/TLVW8NWN/strawberries-and-cream-cake",
     image: "Strawberries-and-Cream-Cake-661721.jpg",
   },
   {
@@ -68,7 +68,7 @@ export const appleCakes = [
     readyInMinutes: 45,
     servings: 6,
     sourceUrl:
-      "http://www.foodista.com/recipe/VRLRJ6VZ/real-strawberry-poke-cake",
+      "https://www.foodista.com/recipe/VRLRJ6VZ/real-strawberry-poke-cake",
     image: "Real-Strawberry-Poke-Cake-658019.jpg",
   },
   {
@@ -77,7 +77,7 @@ export const appleCakes = [
     readyInMinutes: 45,
     servings: 10,
     sourceUrl:
-      "http://www.foodista.com/recipe/RCB8SXTV/warm-mixed-berry-crumb-cake",
+      "https://www.foodista.com/recipe/RCB8SXTV/warm-mixed-berry-crumb-cake",
     image: "Warm-Mixed-Berry-Crumb-Cake-664964.jpg",
   },
   {
@@ -96,7 +96,7 @@ export const appleCakes = [
     readyInMinutes: 45,
     servings: 4,
     sourceUrl:
-      "http://www.foodista.com/recipe/H3GGNYPZ/a-classic-strawberry-shortcake",
+      "https://www.foodista.com/recipe/H3GGNYPZ/a-classic-strawberry-shortcake",
     image: "A-Classic-Strawberry-Shortcake-631892.jpg",
   },
   {
@@ -105,7 +105,7 @@ export const appleCakes = [
     readyInMinutes: 60,
     servings: 8,
     sourceUrl:
-      "http://www.foodista.com/recipe/TBHKP2RS/homemade-strawberry-shortcake",
+      "https://www.foodista.com/recipe/TBHKP2RS/homemade-strawberry-shortcake",
     image: "Homemade-strawberry-shortcake-647114.jpg",
   },
 ];
@@ -392,7 +392,7 @@ export const individualRecipe = {
   readyInMinutes: 45,
   servings: 12,
   sourceUrl:
-    "http://www.foodista.com/recipe/22CXSPRX/favorite-moist-chocolate-cake",
+    "https://www.foodista.com/recipe/22CXSPRX/favorite-moist-chocolate-cake",
   image: "https://spoonacular.com/recipeImages/642648-556x370.jpg",
   imageType: "jpg",
   summary:
@@ -752,7 +752,7 @@ export const searchRecipe = {
       readyInMinutes: 45,
       servings: 2,
       sourceUrl:
-        "http://www.foodista.com/recipe/K5KVRWVR/peanut-butter-and-jelly-smoothie",
+        "https://www.foodista.com/recipe/K5KVRWVR/peanut-butter-and-jelly-smoothie",
       image: "https://spoonacular.com/recipeImages/655235-556x370.jpg",
       imageType: "jpg",
       summary:
