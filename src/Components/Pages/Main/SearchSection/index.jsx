@@ -1,13 +1,18 @@
-import { appleCakes } from "../../../../data";
+import { appleCakes, categorySkeletonData, recipeSkeletonData } from "../../../../data";
 import { RecipeCard } from "../../../Cards/RecipeCard";
 import { BiSearchAlt, BiSortDown, BiSortUp } from "react-icons/bi";
 import { useState } from "react";
 import { handleSearch } from "../../../../API/recipes";
+import { useRouting } from "../../../../Context/RoutingContext/RoutingContext";
+import { CategoryRecipeCardSkeleton } from "../../../Cards/CategoryRecipeCard/CategoryRecipeCardSkeleton";
+import { RecipeCardSkeleton } from "../../../Cards/RecipeCard/RecipeCardSkeleton";
 
 export const SearchSection = () => {
   const [recipeQuery, setRecipeQuery] = useState("");
   const [recipes, setRecipes] = useState(appleCakes);
   const [isAscending, setIsAscending] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const { setPrevRoute } = useRouting();
 
   const sortByParams = (e) => {
     const param = e.target.value;
@@ -31,16 +36,22 @@ export const SearchSection = () => {
 
   const handleSubmitSearch = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const recipes = await handleSearch(recipeQuery);
     setRecipes(
       recipes.sort((a, b) => {
         return a["servings"] - b["servings"];
       })
     );
+    setIsLoading(false);
+  };
+
+  const handleSetPrevRoute = () => {
+    setPrevRoute("/#search");
   };
 
   return (
-    <div className="flex flex-col items-center justify-start">
+    <div className="flex flex-col items-center justify-start ">
       <div className=" text-gray-500 border-b border-gray-500 text-3xl">
         <form onSubmit={handleSubmitSearch} className="flex items-center">
           <input
@@ -77,10 +88,16 @@ export const SearchSection = () => {
           />
         )}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 p-6 md:p-12 lg:p-20">
-        {recipes.length ? (
+      <div className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 p-6 md:p-12 lg:p-20">
+        {isLoading ? (
+          recipeSkeletonData.map((el) => <RecipeCardSkeleton />)
+        ) : recipes.length ? (
           recipes.map((recipe, idx) => {
-            return <RecipeCard key={idx} recipe={recipe} />;
+            return (
+              <div onClick={handleSetPrevRoute}>
+                <RecipeCard key={idx} recipe={recipe} />
+              </div>
+            );
           })
         ) : (
           <p>No recipes match this search</p>

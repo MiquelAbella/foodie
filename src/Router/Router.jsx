@@ -9,7 +9,6 @@ import { ScrollTop } from "../Components/ScrollTop";
 export const AppRouter = () => {
   return (
     <>
-      <ScrollTop />
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route path="/recipe">

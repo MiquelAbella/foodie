@@ -7,11 +7,15 @@ import { Ingredients } from "../../Components/Pages/RecipeDetails/Ingredients";
 import { Steps } from "../../Components/Pages/RecipeDetails/Steps";
 import { Recommendation } from "../../Components/Pages/RecipeDetails/Recommendation";
 import { RiArrowGoBackFill } from "react-icons/ri";
+import { HashLink } from "react-router-hash-link";
+import { useRouting } from "../../Context/RoutingContext/RoutingContext";
+import { ScrollTop } from "../../Components/ScrollTop";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const RecipeDetails = () => {
   let { id } = useParams();
+  const { prevRoute } = useRouting();
   const isLoading = false;
   //   const { isLoading, error, data } = useQuery({
   //     queryKey: ["repoData"],
@@ -23,12 +27,12 @@ export const RecipeDetails = () => {
   //   console.log(data);
   return (
     <>
-      <NavLink to="/">
+      <HashLink to={prevRoute}>
         <div className="h-8 w-8 rounded-full bg-white fixed top-2 left-2 z-50 flex items-center justify-center">
           <RiArrowGoBackFill className="text-gray-500 text-xl" />
         </div>
-      </NavLink>
-      {!isLoading &&  (
+      </HashLink>
+      {!isLoading && (
         <>
           <Header data={data} />
           <Ingredients data={data} />
@@ -36,6 +40,7 @@ export const RecipeDetails = () => {
           <Recommendation data={data} />
         </>
       )}
+      <ScrollTop />
     </>
   );
 };

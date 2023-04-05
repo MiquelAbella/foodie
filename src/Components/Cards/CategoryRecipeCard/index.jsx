@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useMenu } from "../../../Context/MenuContext/MenuContext";
 import { MdOutlineRestaurant } from "react-icons/md";
 import { toast, Toaster } from "react-hot-toast";
+import { useRouting } from "../../../Context/RoutingContext/RoutingContext";
 
-export const CategoryRecipeCard = ({ recipe }) => {
+export const CategoryRecipeCard = ({ recipe, category }) => {
   const navigate = useNavigate();
   const { addToMenu, menu } = useMenu();
+  const { setPrevRoute } = useRouting();
   const [isHovered, setIsHovered] = useState(false);
 
   const handleAddToMenu = (e) => {
@@ -21,6 +23,7 @@ export const CategoryRecipeCard = ({ recipe }) => {
 
   const handleNavigate = () => {
     navigate(`/recipe/${recipe.id}`);
+    setPrevRoute(`/category/${category}`);
   };
   return (
     <div

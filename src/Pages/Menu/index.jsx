@@ -3,7 +3,7 @@ import { useMenu } from "../../Context/MenuContext/MenuContext";
 import { MenuCard } from "../../Components/Cards/MenuCard";
 import headerImage from "../../assets/menuImg2.jpg";
 import { NavLink } from "react-router-dom";
-import { RiArrowGoBackFill } from "react-icons/ri";
+import { RiHome2Fill } from "react-icons/ri";
 
 export const Menu = () => {
   const { menu } = useMenu();
@@ -24,9 +24,9 @@ export const Menu = () => {
           return <MenuCard recipe={recipe} />;
         })}
       </div>
-        <NavLink to="/">
+      <NavLink to="/">
         <div className="h-8 w-8 rounded-full bg-white fixed top-2 left-2 z-50 flex items-center justify-center">
-          <RiArrowGoBackFill className="text-gray-500 text-xl" />
+          <RiHome2Fill className="text-gray-500 text-2xl" />
         </div>
       </NavLink>
     </div>

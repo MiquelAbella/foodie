@@ -917,3 +917,19 @@ export const cuisines = [
     img: "https://media.istockphoto.com/id/495695006/photo/squeegee.jpg?b=1&s=612x612&w=0&k=20&c=zNG99ydSOnyGPgn6_QDXe_V5KcFBO0WDuKdzMAoyucQ=",
   },
 ];
+
+export const categorySkeletonData = ["", "", "", "", "", "", "", "", ""];
+export const recipeSkeletonData = [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+];
