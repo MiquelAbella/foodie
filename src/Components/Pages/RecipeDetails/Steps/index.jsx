@@ -27,9 +27,9 @@ export const Steps = ({ data }) => {
           <p>INSTRUCTIONS</p>
           <ol className="list-decimal">
             {data.analyzedInstructions.map((instruction) => {
-              return instruction.steps.map((step, idx) => {
+              return instruction.steps.map((step) => {
                 return (
-                  <li key={idx} className="pt-3">
+                  <li key={step.step} className="pt-3">
                     {step.step}
                   </li>
                 );

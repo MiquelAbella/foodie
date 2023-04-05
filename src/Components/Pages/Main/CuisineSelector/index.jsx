@@ -22,7 +22,7 @@ export const CuisineSelector = () => {
               to={`/category/${category.type.toLowerCase()}`}
               className="w-full"
             >
-              <CuisineCard key={idx} id={idx} category={category} />
+              <CuisineCard id={idx} category={category} />
             </NavLink>
           );
         })}

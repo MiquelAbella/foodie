@@ -38,7 +38,7 @@ export const CategoryPage = () => {
             <CategoryRecipeCardSkeleton key={`${el}-${idx}`} />
           ))
         ) : data ? (
-          data.map((recipe, idx) => {
+          data.map((recipe) => {
             return (
               <CategoryRecipeCard
                 key={recipe.title}

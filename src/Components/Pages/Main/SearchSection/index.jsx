@@ -88,7 +88,7 @@ export const SearchSection = () => {
       </div>
       <div className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 p-6 md:p-12 lg:p-20">
         {isLoading ? (
-          recipeSkeletonData.map((el) => <RecipeCardSkeleton />)
+          recipeSkeletonData.map((el, idx) => <RecipeCardSkeleton key={`${el}-${idx}`}/>)
         ) : recipes.length ? (
           recipes.map((recipe) => {
             return (
