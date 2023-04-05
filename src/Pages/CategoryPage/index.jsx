@@ -1,18 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getRecipesByCuisine } from "../../API/recipes";
-import { RecipeCard } from "../../Components/Cards/RecipeCard";
-import { categorySkeletonData, categoryData as data } from "../../data";
+import { categorySkeletonData } from "../../data";
 import { cuisines } from "../../data";
-import { useMenu } from "../../Context/MenuContext/MenuContext";
-import { useState } from "react";
-import { MdOutlineRestaurant } from "react-icons/md";
 import { CategoryRecipeCard } from "../../Components/Cards/CategoryRecipeCard";
-import { Parallax } from "react-scroll-parallax";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { HashLink } from "react-router-hash-link";
 import { ScrollTop } from "../../Components/ScrollTop";
-import { useRouting } from "../../Context/RoutingContext/RoutingContext";
 import { CategoryRecipeCardSkeleton } from "../../Components/Cards/CategoryRecipeCard/CategoryRecipeCardSkeleton";
 
 export const CategoryPage = () => {
@@ -21,12 +15,12 @@ export const CategoryPage = () => {
   const filtered = cuisines.filter((cuisine) => {
     return cuisine.type.toLowerCase() === category;
   })[0];
-    const { data, isLoading, error } = useQuery({
-      queryKey: [category],
-      queryFn: async () => await getRecipesByCuisine(category),
-    });
-    console.log(JSON.stringify(data));
-//   const isLoading = false;
+  const { data, isLoading, error } = useQuery({
+    queryKey: [category],
+    queryFn: async () => await getRecipesByCuisine(category),
+  });
+  console.log(JSON.stringify(data));
+  //   const isLoading = false;
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -43,10 +37,16 @@ export const CategoryPage = () => {
       </div>
       <div className="grid gap-6 grid-cols-1 px-4 md:px-0 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center w-4/5 min-h-screen">
         {isLoading ? (
-          categorySkeletonData.map((el) => <CategoryRecipeCardSkeleton />)
+          categorySkeletonData.map((el, idx) => <CategoryRecipeCardSkeleton key={idx} />)
         ) : data ? (
           data.map((recipe, idx) => {
-            return <CategoryRecipeCard recipe={recipe} category={category} />;
+            return (
+              <CategoryRecipeCard
+                key={idx}
+                recipe={recipe}
+                category={category}
+              />
+            );
           })
         ) : (
           <p className="absolute top-[50vh] text-2xl bg-red-500 text-white p-6 w-3/5 text-center rounded-md">

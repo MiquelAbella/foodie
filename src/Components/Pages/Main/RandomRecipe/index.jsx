@@ -1,7 +1,6 @@
 import { useState } from "react";
 import bg from "../../../../assets/RandomRecipeBg.jpg";
 import searchText from "../../../../assets/searchText.png";
-import { searchRecipe as data } from "../../../../data";
 import { RecipeCard } from "../../../Cards/RecipeCard";
 import { useRouting } from "../../../../Context/RoutingContext/RoutingContext";
 
@@ -17,7 +16,6 @@ export const RandomRecipe = () => {
     );
     const data = await res.json();
     setRecipe(data);
-    console.log(JSON.stringify(data));
   };
 
   const handleSetPrevRoute = () => {

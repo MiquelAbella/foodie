@@ -1,7 +1,6 @@
 import { MdOutlineRestaurant } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { useMenu } from "../Context/MenuContext/MenuContext";
-import { Footer } from "../Components/Footer";
 
 export const Layout = ({ children }) => {
   const { menu } = useMenu();

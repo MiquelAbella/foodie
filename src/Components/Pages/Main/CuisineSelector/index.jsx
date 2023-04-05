@@ -15,6 +15,7 @@ export const CuisineSelector = () => {
         {cuisines.map((category, idx) => {
           return (
             <NavLink
+            key={idx}
               onClick={handleSetPrevRoute}
               to={`/category/${category.type.toLowerCase()}`}
               className="w-full"

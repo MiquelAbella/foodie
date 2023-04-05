@@ -1,4 +1,3 @@
-import React from "react";
 import headerImage from "../../../../assets/headerImg2.jpg";
 import { AiOutlineArrowDown } from "react-icons/ai";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMenu } from "../../../Context/MenuContext/MenuContext";
-import { IoRestaurantOutline, IoPeopleOutline } from "react-icons/io5";
+import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineRestaurant } from "react-icons/md";
 
 import { BiTime } from "react-icons/bi";

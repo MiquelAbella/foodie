@@ -1,7 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { NavLink, useParams } from "react-router-dom";
-import { useMenu } from "../../Context/MenuContext/MenuContext";
-import { individualRecipe as data } from "../../data";
+import { useParams } from "react-router-dom";
 import { Header } from "../../Components/Pages/RecipeDetails/Header";
 import { Ingredients } from "../../Components/Pages/RecipeDetails/Ingredients";
 import { Steps } from "../../Components/Pages/RecipeDetails/Steps";
@@ -24,7 +22,7 @@ export const RecipeDetails = () => {
         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
       ).then((res) => res.json()),
   });
-  console.log(data);
+ 
   return (
     <>
       <HashLink to={prevRoute}>

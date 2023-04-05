@@ -1,4 +1,3 @@
-import React from "react";
 import { useMenu } from "../../Context/MenuContext/MenuContext";
 import { MenuCard } from "../../Components/Cards/MenuCard";
 import headerImage from "../../assets/menuImg2.jpg";
@@ -20,8 +19,8 @@ export const Menu = () => {
         Time to make something delicious !
       </p>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center w-full xl:w-4/5">
-        {menu.map((recipe) => {
-          return <MenuCard recipe={recipe} />;
+        {menu.map((recipe, idx) => {
+          return <MenuCard key={idx} recipe={recipe} />;
         })}
       </div>
       <NavLink to="/">

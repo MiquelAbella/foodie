@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Header = ({ data }) => {
   return (
     <div className="w-full h-[80vh] relative">

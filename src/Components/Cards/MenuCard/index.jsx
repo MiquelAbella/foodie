@@ -1,5 +1,3 @@
-import { IoPeopleOutline } from "react-icons/io5";
-import { BiTime } from "react-icons/bi";
 import { MdOutlineDelete } from "react-icons/md";
 import { useState } from "react";
 import { useMenu } from "../../../Context/MenuContext/MenuContext";

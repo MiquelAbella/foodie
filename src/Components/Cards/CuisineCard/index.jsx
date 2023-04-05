@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const CuisineCard = ({ category, id }) => {
+export const CuisineCard = ({ category }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { type, img } = category;
 
@@ -17,7 +17,9 @@ export const CuisineCard = ({ category, id }) => {
         } w-full flex items-center justify-center duration-300`}
       >
         <button
-          className={`text-3xl px-4 py-2  text-slate-800 cursor-pointer hover:text-slate-600 ${isHovered && "border-y border-slate-800"}   text-center`}
+          className={`text-3xl px-4 py-2  text-slate-800 cursor-pointer hover:text-slate-600 ${
+            isHovered && "border-y border-slate-800"
+          }   text-center`}
         >
           {!isHovered ? type.toUpperCase() : "VIEW"}
         </button>

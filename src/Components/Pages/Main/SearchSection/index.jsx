@@ -1,10 +1,9 @@
-import { appleCakes, categorySkeletonData, recipeSkeletonData } from "../../../../data";
+import { appleCakes, recipeSkeletonData } from "../../../../data";
 import { RecipeCard } from "../../../Cards/RecipeCard";
 import { BiSearchAlt, BiSortDown, BiSortUp } from "react-icons/bi";
 import { useState } from "react";
 import { handleSearch } from "../../../../API/recipes";
 import { useRouting } from "../../../../Context/RoutingContext/RoutingContext";
-import { CategoryRecipeCardSkeleton } from "../../../Cards/CategoryRecipeCard/CategoryRecipeCardSkeleton";
 import { RecipeCardSkeleton } from "../../../Cards/RecipeCard/RecipeCardSkeleton";
 
 export const SearchSection = () => {
@@ -94,7 +93,7 @@ export const SearchSection = () => {
         ) : recipes.length ? (
           recipes.map((recipe, idx) => {
             return (
-              <div onClick={handleSetPrevRoute}>
+              <div key={idx} onClick={handleSetPrevRoute}>
                 <RecipeCard key={idx} recipe={recipe} />
               </div>
             );
