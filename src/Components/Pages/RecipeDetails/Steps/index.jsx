@@ -8,7 +8,10 @@ export const Steps = ({ data }) => {
           <p className="text-center mb-2">INGREDIENTS</p>
           {data.extendedIngredients.map((ingredient, idx) => {
             return (
-              <div key={idx} className="flex md:w-5/6 items-start justify-between gap-4 pb-2">
+              <div
+                key={ingredient.name}
+                className="flex md:w-5/6 items-start justify-between gap-4 pb-2"
+              >
                 <p className="text-gray-600 font-bold">
                   {ingredient.name.toUpperCase()}
                 </p>
@@ -25,7 +28,11 @@ export const Steps = ({ data }) => {
           <ol className="list-decimal">
             {data.analyzedInstructions.map((instruction) => {
               return instruction.steps.map((step, idx) => {
-                return <li key={idx} className="pt-3">{step.step}</li>;
+                return (
+                  <li key={idx} className="pt-3">
+                    {step.step}
+                  </li>
+                );
               });
             })}
           </ol>

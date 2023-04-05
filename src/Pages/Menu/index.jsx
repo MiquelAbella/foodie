@@ -20,7 +20,7 @@ export const Menu = () => {
       </p>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center w-full xl:w-4/5">
         {menu.map((recipe, idx) => {
-          return <MenuCard key={idx} recipe={recipe} />;
+          return <MenuCard key={recipe.title} recipe={recipe} />;
         })}
       </div>
       <NavLink to="/">

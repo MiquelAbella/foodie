@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useMemo, useReducer } from "react";
 import { menuTypes } from "../Types/menuTypes";
 import menuReducer from "./MenuReducer";
 
@@ -25,17 +25,15 @@ export const MenuProvider = ({ children }) => {
     return dispatch({ type: menuTypes.delete, payload: [...filtered] });
   };
 
-  return (
-    <MenuContext.Provider
-      value={{
-        ...state,
-        addToMenu,
-        deleteFromMenu,
-      }}
-    >
-      {children}
-    </MenuContext.Provider>
-  );
+  const value = useMemo(() => {
+    return {
+      ...state,
+      addToMenu,
+      deleteFromMenu,
+    };
+  }, [state]);
+  
+  return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;
 };
 
 export default MenuContext;

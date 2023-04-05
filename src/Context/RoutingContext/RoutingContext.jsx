@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { createContext, useContext, useState } from "react";
 
 const RoutingContext = createContext();
@@ -10,15 +11,15 @@ export const useRouting = () => {
 export const RoutingProvider = ({ children }) => {
   const [prevRoute, setPrevRoute] = useState("/");
 
+  const value = useMemo(() => {
+    return {
+      prevRoute,
+      setPrevRoute,
+    };
+  }, [prevRoute]);
+
   return (
-    <RoutingContext.Provider
-      value={{
-        prevRoute,
-        setPrevRoute,
-      }}
-    >
-      {children}
-    </RoutingContext.Provider>
+    <RoutingContext.Provider value={value}>{children}</RoutingContext.Provider>
   );
 };
 

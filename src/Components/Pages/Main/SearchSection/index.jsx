@@ -37,11 +37,10 @@ export const SearchSection = () => {
     e.preventDefault();
     setIsLoading(true);
     const recipes = await handleSearch(recipeQuery);
-    setRecipes(
-      recipes.sort((a, b) => {
-        return a["servings"] - b["servings"];
-      })
-    );
+    const sortedRecipes = recipes.sort((a, b) => {
+      return a["servings"] - b["servings"];
+    });
+    setRecipes(sortedRecipes);
     setIsLoading(false);
   };
 
@@ -91,10 +90,10 @@ export const SearchSection = () => {
         {isLoading ? (
           recipeSkeletonData.map((el) => <RecipeCardSkeleton />)
         ) : recipes.length ? (
-          recipes.map((recipe, idx) => {
+          recipes.map((recipe) => {
             return (
-              <div key={idx} onClick={handleSetPrevRoute}>
-                <RecipeCard key={idx} recipe={recipe} />
+              <div key={recipe.title} onClick={handleSetPrevRoute}>
+                <RecipeCard recipe={recipe} />
               </div>
             );
           })

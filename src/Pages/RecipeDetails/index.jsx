@@ -15,7 +15,7 @@ export const RecipeDetails = () => {
   let { id } = useParams();
   const { prevRoute } = useRouting();
 
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
       fetch(
@@ -30,7 +30,7 @@ export const RecipeDetails = () => {
           <RiArrowGoBackFill className="text-gray-500 text-xl" />
         </div>
       </HashLink>
-      {!isLoading && (
+      {!isLoading && data && (
         <>
           <Header data={data} />
           <Ingredients data={data} />

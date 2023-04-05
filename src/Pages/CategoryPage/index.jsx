@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { getRecipesByCuisine } from "../../API/recipes";
-import { categorySkeletonData } from "../../data";
-import { cuisines } from "../../data";
+import { categorySkeletonData, cuisines } from "../../data";
 import { CategoryRecipeCard } from "../../Components/Cards/CategoryRecipeCard";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import { HashLink } from "react-router-hash-link";
@@ -15,12 +14,10 @@ export const CategoryPage = () => {
   const filtered = cuisines.filter((cuisine) => {
     return cuisine.type.toLowerCase() === category;
   })[0];
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: [category],
     queryFn: async () => await getRecipesByCuisine(category),
   });
-  console.log(JSON.stringify(data));
-  //   const isLoading = false;
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -37,12 +34,14 @@ export const CategoryPage = () => {
       </div>
       <div className="grid gap-6 grid-cols-1 px-4 md:px-0 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center w-4/5 min-h-screen">
         {isLoading ? (
-          categorySkeletonData.map((el, idx) => <CategoryRecipeCardSkeleton key={idx} />)
+          categorySkeletonData.map((el, idx) => (
+            <CategoryRecipeCardSkeleton key={`${el}-${idx}`} />
+          ))
         ) : data ? (
           data.map((recipe, idx) => {
             return (
               <CategoryRecipeCard
-                key={idx}
+                key={recipe.title}
                 recipe={recipe}
                 category={category}
               />
