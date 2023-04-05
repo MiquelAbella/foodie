@@ -827,3 +827,93 @@ export const searchRecipe = {
     },
   ],
 };
+
+export const categoryData = [
+  {
+    id: 1095806,
+    title: "Spanish style salmon fillets",
+    image: "https://spoonacular.com/recipeImages/1095806-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 662294,
+    title: "Sun-Dried Tomato Romesco",
+    image: "https://spoonacular.com/recipeImages/662294-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 631747,
+    title: "Dutch Oven Paella",
+    image: "https://spoonacular.com/recipeImages/631747-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 652134,
+    title: "Mixed Paella",
+    image: "https://spoonacular.com/recipeImages/652134-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 1095841,
+    title: "Spanish Gazpacho Soup",
+    image: "https://spoonacular.com/recipeImages/1095841-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 654327,
+    title: "Paella for Four; A Wonderful Spanish Mixed Seafood Stew",
+    image: "https://spoonacular.com/recipeImages/654327-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 1697577,
+    title: "Spanish Sardines Pasta",
+    image: "https://spoonacular.com/recipeImages/1697577-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 660883,
+    title: "Spanish “Ketchup” – Romesco Sauce",
+    image: "https://spoonacular.com/recipeImages/660883-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 641911,
+    title: "Easy Chicken, Kielbasa and Shrimp Paella",
+    image: "https://spoonacular.com/recipeImages/641911-312x231.jpg",
+    imageType: "jpg",
+  },
+  {
+    id: 660861,
+    title: 'Spanish Gazpacho Soup In The Raw With Broiled "Cheese" Toast',
+    image: "https://spoonacular.com/recipeImages/660861-312x231.jpg",
+    imageType: "jpg",
+  },
+];
+
+export const cuisines = [
+  {
+    type: "Italian",
+    img: "https://images.pexels.com/photos/7218637/pexels-photo-7218637.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    type: "American",
+    img: "https://images.pexels.com/photos/4392634/pexels-photo-4392634.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    type: "Spanish",
+    img: "https://images.pexels.com/photos/4765652/pexels-photo-4765652.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    type: "Indian",
+    img: "https://images.pexels.com/photos/12737801/pexels-photo-12737801.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    type: "Mexican",
+    img: "https://images.pexels.com/photos/6400026/pexels-photo-6400026.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    type: "French",
+    img: "https://media.istockphoto.com/id/495695006/photo/squeegee.jpg?b=1&s=612x612&w=0&k=20&c=zNG99ydSOnyGPgn6_QDXe_V5KcFBO0WDuKdzMAoyucQ=",
+  },
+];

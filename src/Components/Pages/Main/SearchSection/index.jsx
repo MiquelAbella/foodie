@@ -29,22 +29,32 @@ export const SearchSection = () => {
     setRecipeQuery(e.target.value);
   };
 
-  const handleSubmitSearch = async () => {
+  const handleSubmitSearch = async (e) => {
+    e.preventDefault();
     const recipes = await handleSearch(recipeQuery);
-    setRecipes(recipes);
+    setRecipes(
+      recipes.sort((a, b) => {
+        return a["servings"] - b["servings"];
+      })
+    );
   };
 
   return (
     <div className="flex flex-col items-center justify-start">
-      <div className="flex items-center text-gray-500 border-b border-gray-500 text-3xl">
-        <input
-          id="search-input"
-          className="px-4 py-2 w-[80vw] md:w-[40vw] outline-none"
-          placeholder="Strawberry cake"
-          value={recipeQuery}
-          onChange={handleInputChange}
-        />
-        <BiSearchAlt onClick={handleSubmitSearch} />
+      <div className=" text-gray-500 border-b border-gray-500 text-3xl">
+        <form onSubmit={handleSubmitSearch} className="flex items-center">
+          <input
+            id="search-input"
+            className="px-4 py-2 w-[80vw] md:w-[40vw] outline-none"
+            placeholder="Strawberry cake"
+            value={recipeQuery}
+            onChange={handleInputChange}
+          />
+          <BiSearchAlt
+            onClick={handleSubmitSearch}
+            className="cursor-pointer"
+          />
+        </form>
       </div>
       <div className="pt-4 flex items-center gap-6">
         <label className="text-gray-500">Sort by :</label>

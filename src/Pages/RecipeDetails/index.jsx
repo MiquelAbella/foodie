@@ -12,14 +12,15 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const RecipeDetails = () => {
   let { id } = useParams();
-  const { isLoading, error, data } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: () =>
-      fetch(
-        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
-      ).then((res) => res.json()),
-  });
-  console.log(data);
+  const isLoading = false;
+  //   const { isLoading, error, data } = useQuery({
+  //     queryKey: ["repoData"],
+  //     queryFn: () =>
+  //       fetch(
+  //         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
+  //       ).then((res) => res.json()),
+  //   });
+  //   console.log(data);
   return (
     <>
       <NavLink to="/">
@@ -27,7 +28,7 @@ export const RecipeDetails = () => {
           <RiArrowGoBackFill className="text-gray-500 text-xl" />
         </div>
       </NavLink>
-      {!isLoading && !error && (
+      {!isLoading &&  (
         <>
           <Header data={data} />
           <Ingredients data={data} />

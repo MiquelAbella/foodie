@@ -19,24 +19,29 @@ export const RandomRecipe = () => {
   };
   return (
     <div
-      className="min-h-[60vh] p-12 flex flex-col items-center justify-center bg-cover my-24 relative overflow-hidden"
+      className="min-h-[80vh] p-12 flex flex-col items-center justify-around bg-cover my-24 relative overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="flex items-center">
         {recipe ? (
-          <div className="w-80 bg-white rounded-md">
-            <RecipeCard recipe={recipe.recipes[0]} />
+          <div className="w-80 md:w-96 h-3/5 bg-white/50  p-6">
+            <div className="bg-white rounded-md">
+              <RecipeCard recipe={recipe.recipes[0]} />
+            </div>
           </div>
         ) : (
-          <img className="w-80 h-80 object-contain" src={searchText} />
+          <img
+            className="w-80 md:w-96 h-80 md:h-96 object-contain"
+            src={searchText}
+          />
         )}
       </div>
 
       <button
         onClick={getRandomRecipe}
-        className="py-4 px-4 md:px-24 mr-4 text-lg sm:text-xl text-white mb-4 rounded-full absolute bottom-6 bg-[#008F49]"
+        className="py-4 px-4 md:px-24 mr-4 text-lg sm:text-xl text-white mb-4 rounded-full bottom-6 bg-[#008F49]"
       >
-        GIVE ME A RANDOM RECIPE !
+        RANDOM RECIPE !
       </button>
     </div>
   );

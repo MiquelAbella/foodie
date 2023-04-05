@@ -13,7 +13,7 @@ export const Header = () => {
       </h1>
       <h2 className="text-xl text-gray-600">MAKE SOMETHING DELICIOUS</h2>
       <div className="absolute bottom-5">
-      <AiOutlineArrowDown className="text-gray-600 text-4xl animate-bounce"/>
+        <AiOutlineArrowDown className="text-gray-600 text-4xl animate-bounce" />
       </div>
     </div>
   );

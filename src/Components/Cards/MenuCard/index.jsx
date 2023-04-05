@@ -11,7 +11,7 @@ export const MenuCard = ({ recipe }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { deleteFromMenu } = useMenu();
 
-  const { imageType, image, servings, readyInMinutes, id } = recipe;
+  const { imageType, image, id, title } = recipe;
 
   const handleDelete = (e) => {
     e.stopPropagation();
@@ -25,7 +25,7 @@ export const MenuCard = ({ recipe }) => {
 
   return (
     <div
-      className="w-72 h-72 flex flex-col items-center justify-between relative cursor-pointer border border-gray-300 hover:bg-gray-300 duration-300"
+      className="w-72 h-72 flex flex-col items-center justify-start gap-2 relative cursor-pointer border border-gray-300 hover:bg-gray-300 duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleNavigate}
@@ -39,16 +39,7 @@ export const MenuCard = ({ recipe }) => {
             : `https://spoonacular.com/recipeImages/${id}-636x393.jpg`
         }
       />
-      <div className="flex w-full items-end justify-between md:px-6 pb-4">
-        <div className="flex gap-2 items-center">
-          <IoPeopleOutline />
-          <p>{servings}</p>
-        </div>
-        <div className="flex gap-2 items-center">
-          <BiTime />
-          <p>{readyInMinutes} '</p>
-        </div>
-      </div>
+      <p className="text-gray-600">{title}</p>
       {isHovered && (
         <div
           className="absolute top-2 right-2 bg-red-500 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer"
