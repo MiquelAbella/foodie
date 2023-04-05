@@ -19,7 +19,7 @@ export const RandomRecipe = () => {
   };
   return (
     <div
-      className="min-h-[80vh] p-12 flex flex-col items-center justify-around bg-cover my-24 relative overflow-hidden"
+      className="min-h-[60vh] p-12 flex flex-col items-center justify-around bg-cover  my-20 relative overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="flex items-center">
@@ -39,7 +39,7 @@ export const RandomRecipe = () => {
 
       <button
         onClick={getRandomRecipe}
-        className="py-4 px-4 md:px-24 mr-4 text-lg sm:text-xl text-white mb-4 rounded-full bottom-6 bg-[#008F49]"
+        className="py-4 px-4 md:px-24 mr-4 text-lg sm:text-xl mt-4 md:mt-0 text-white mb-4 rounded-full  bg-[#008F49]"
       >
         RANDOM RECIPE !
       </button>

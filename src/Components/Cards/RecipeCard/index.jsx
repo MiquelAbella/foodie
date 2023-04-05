@@ -36,11 +36,12 @@ export const RecipeCard = ({ recipe }) => {
         onClick={handleNavigate}
       >
         <div
+          onClick={handleAddToMenu}
           className={`absolute right-2 top-2 p-2 bg-gray-500 rounded-full hover:scale-95 ${
             !isHovered && "hidden"
           }`}
         >
-          <MdOutlineRestaurant className="text-lg text-white" onClick={handleAddToMenu} />
+          <MdOutlineRestaurant className="text-lg text-white" />
         </div>
         <img
           className="rounded-md w-full object-cover "

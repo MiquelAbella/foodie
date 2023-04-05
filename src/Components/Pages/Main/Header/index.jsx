@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center">
       <h1
-        className="text-[25vw] font-extrabold text-transparent bg-clip-text bg-cover"
+        className="text-[23vw] font-extrabold text-transparent bg-clip-text bg-cover"
         style={{ backgroundImage: `url(${headerImage})` }}
       >
         FOODIE

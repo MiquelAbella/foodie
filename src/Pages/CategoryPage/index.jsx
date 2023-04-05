@@ -26,7 +26,7 @@ export const CategoryPage = () => {
     <div className="flex flex-col items-center justify-cente">
       <div className="bg-cyan-600 w-full mb-12">
         <h1
-          className="text-[17vw] w-full text-center font-extrabold text-transparent bg-clip-text"
+          className="text-[15vw] w-full text-center font-extrabold text-transparent bg-clip-text"
           style={{ backgroundImage: `url(${filtered.img})` }}
         >
           {category.toUpperCase()}

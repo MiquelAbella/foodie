@@ -10,9 +10,15 @@ export const Main = () => {
   return (
     <div>
       <Header />
-      <CuisineSelector />
-      <RandomRecipe />
-      <SearchSection />
+      <div id="cuisine-selector">
+        <CuisineSelector />
+      </div>
+      <div id="random">
+        <RandomRecipe />
+      </div>
+      <div id="search">
+        <SearchSection />
+      </div>
     </div>
   );
 };
