@@ -5,6 +5,7 @@ import {
   RandomRecipe,
   SearchSection,
 } from "../../Components/Pages/Main";
+import { Footer } from "../../Components/Footer";
 
 export const Main = () => {
   return (
@@ -19,6 +20,7 @@ export const Main = () => {
       <div id="search">
         <SearchSection />
       </div>
+      <Footer />
     </div>
   );
 };

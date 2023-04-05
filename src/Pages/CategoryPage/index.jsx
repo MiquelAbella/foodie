@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { getRecipesByCuisine } from "../../API/recipes";
 import { RecipeCard } from "../../Components/Cards/RecipeCard";
 import { categoryData as data } from "../../data";
