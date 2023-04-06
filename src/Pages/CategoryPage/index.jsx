@@ -19,6 +19,29 @@ export const CategoryPage = () => {
     queryFn: async () => await getRecipesByCuisine(category),
   });
 
+  let contents;
+  if (isLoading) {
+    contents = categorySkeletonData.map((el) => (
+      <CategoryRecipeCardSkeleton key={el} />
+    ));
+  } else if (data) {
+    contents = data.map((recipe) => {
+      return (
+        <CategoryRecipeCard
+          key={recipe.title}
+          recipe={recipe}
+          category={category}
+        />
+      );
+    });
+  } else {
+    contents = (
+      <p className="absolute top-[50vh] text-2xl bg-red-500 text-white p-6 w-3/5 text-center rounded-md">
+        Ooops... Something happened...
+      </p>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="bg-cyan-600 w-full mb-12">
@@ -33,25 +56,7 @@ export const CategoryPage = () => {
         </p>
       </div>
       <div className="grid gap-6 grid-cols-1 px-4 md:px-0 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center w-4/5 min-h-screen">
-        {isLoading ? (
-          categorySkeletonData.map((el) => (
-            <CategoryRecipeCardSkeleton key={el} />
-          ))
-        ) : data ? (
-          data.map((recipe) => {
-            return (
-              <CategoryRecipeCard
-                key={recipe.title}
-                recipe={recipe}
-                category={category}
-              />
-            );
-          })
-        ) : (
-          <p className="absolute top-[50vh] text-2xl bg-red-500 text-white p-6 w-3/5 text-center rounded-md">
-            Ooops... Something happened...
-          </p>
-        )}
+        {contents}
       </div>
       <HashLink to="/#cuisine-selector">
         <div className="h-8 w-8 rounded-full bg-white fixed top-2 left-2 z-50 flex items-center justify-center">

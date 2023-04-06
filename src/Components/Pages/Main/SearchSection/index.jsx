@@ -48,6 +48,24 @@ export const SearchSection = () => {
     setPrevRoute("/#search");
   };
 
+  const renderRecipes = () => {
+    if (isLoading) {
+      return recipeSkeletonData.map((el, idx) => (
+        <RecipeCardSkeleton key={el} />
+      ));
+    } else if (recipes.length) {
+      return recipes.map((recipe) => {
+        return (
+          <div key={recipe.title} onClick={handleSetPrevRoute}>
+            <RecipeCard recipe={recipe} />
+          </div>
+        );
+      });
+    } else {
+      return <p>No recipes match this search</p>;
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-start ">
       <div className=" text-gray-500 border-b border-gray-500 text-3xl">
@@ -87,19 +105,7 @@ export const SearchSection = () => {
         )}
       </div>
       <div className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 p-6 md:p-12 lg:p-20">
-        {isLoading ? (
-          recipeSkeletonData.map((el, idx) => <RecipeCardSkeleton key={el} />)
-        ) : recipes.length ? (
-          recipes.map((recipe) => {
-            return (
-              <div key={recipe.title} onClick={handleSetPrevRoute}>
-                <RecipeCard recipe={recipe} />
-              </div>
-            );
-          })
-        ) : (
-          <p>No recipes match this search</p>
-        )}
+        {renderRecipes()}
       </div>
     </div>
   );
