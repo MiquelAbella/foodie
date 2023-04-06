@@ -56,3 +56,16 @@ Review from SonarCloud
 - React-icons: React icons holds a wide range of icons.
 
 - React-router-hash-link: This library allows you to navigate through pages and scrolling into a particular section on route change.
+
+## Folders structure
+
+- API folder: To manage api call functions.
+- Components: Reusable components. If components are only used in one view, the path is Components/Pages.
+- Context: Contains two context. Menu (to store favorite recipes) and Routing (to allow user navigate to specific sections when clicking "back", button).
+- Data: Used to display recipes in the view for first time, after a search is made, this data is replaced by the spoonacular API data.
+- Doc: Contains screenshots of the code review of Condefactor and SonarCloud.
+- Layout: Contains pieces of code used in all pages.
+- Pages: The different pages of the app.
+- Router: Contains the routes.
+
+[Link to deployment](https://main--velvety-kitten-d79092.netlify.app/)
