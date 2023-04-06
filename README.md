@@ -57,4 +57,4 @@ Review from SonarCloud
 
 - React-router-hash-link: This library allows you to navigate through pages and scrolling into a particular section on route change.
 
-[Link o deployment](https://main--velvety-kitten-d79092.netlify.app/)
+[Link to deployment](https://main--velvety-kitten-d79092.netlify.app/)
