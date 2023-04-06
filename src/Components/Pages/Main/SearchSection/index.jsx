@@ -16,7 +16,7 @@ export const SearchSection = () => {
   const sortByParams = (e) => {
     const param = e.target.value;
     const newArr = [...recipes];
-    const sortedRecipes = newArr.sort((a, b) => {
+    const sortedRecipes = [...newArr].sort((a, b) => {
       return a[param] - b[param];
     });
     setRecipes(sortedRecipes);
@@ -24,7 +24,7 @@ export const SearchSection = () => {
 
   const toggleAscDesc = () => {
     const newArr = [...recipes];
-    const reversed = newArr.reverse();
+    const reversed = [...newArr].reverse();
     setRecipes(reversed);
     setIsAscending(!isAscending);
   };
@@ -37,7 +37,7 @@ export const SearchSection = () => {
     e.preventDefault();
     setIsLoading(true);
     const recipes = await handleSearch(recipeQuery);
-    const sortedRecipes = recipes.sort((a, b) => {
+    const sortedRecipes = [...recipes].sort((a, b) => {
       return a["servings"] - b["servings"];
     });
     setRecipes(sortedRecipes);
