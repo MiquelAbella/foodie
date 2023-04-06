@@ -1,10 +1,10 @@
 import { useState } from "react";
-import bg from "../../../../assets/RandomRecipeBg.jpg";
-import searchText from "../../../../assets/searchText.png";
 import { RecipeCard } from "../../../Cards/RecipeCard";
 import { useRouting } from "../../../../Context/RoutingContext/RoutingContext";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
+const bg = import.meta.env.BASE_URL + "randomRecipeBg.jpg";
+const searchText = import.meta.env.BASE_URL + "searchText.png";
 
 export const RandomRecipe = () => {
   const [recipe, setRecipe] = useState(null);

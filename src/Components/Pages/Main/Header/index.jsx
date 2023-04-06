@@ -1,5 +1,6 @@
-import headerImage from "../../../../assets/headerImg2.jpg";
 import { AiOutlineArrowDown } from "react-icons/ai";
+
+const headerImage = import.meta.env.BASE_URL + "headerImg2.jpg";
 
 export const Header = () => {
   return (

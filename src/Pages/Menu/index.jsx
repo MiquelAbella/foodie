@@ -1,8 +1,9 @@
 import { useMenu } from "../../Context/MenuContext/MenuContext";
 import { MenuCard } from "../../Components/Cards/MenuCard";
-import headerImage from "../../assets/menuImg2.jpg";
 import { NavLink } from "react-router-dom";
 import { RiHome2Fill } from "react-icons/ri";
+
+const headerImage = import.meta.env.BASE_URL + "menuImg2.jpg";
 
 export const Menu = () => {
   const { menu } = useMenu();
