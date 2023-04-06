@@ -10,7 +10,7 @@ export const CuisineCard = ({ category }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img src={img} className="h-full w-full object-cover" />
+      <img alt="" src={img} className="h-full w-full object-cover" />
       <div
         className={`absolute bottom-0 bg-white/60 ${
           isHovered ? "h-full" : "h-1/6"

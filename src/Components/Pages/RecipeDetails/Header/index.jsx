@@ -1,12 +1,12 @@
 export const Header = ({ data }) => {
   return (
     <div className="w-full h-[80vh] relative">
-      <img
+      <img alt=""
         className="w-full h-full object-cover brightness-[25%] top-0"
         src={data.image}
       />
       <div className="z-10 w-full absolute top-0 right-0 left-0 bottom-0 m-auto flex flex-col items-center justify-center gap-12">
-        <img
+        <img alt=""
           className="w-2/3 md:w-2/5 max-h-[40vh] object-cover rounded-md"
           src={data.image}
         />

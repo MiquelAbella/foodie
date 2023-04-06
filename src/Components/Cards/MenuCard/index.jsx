@@ -29,7 +29,7 @@ export const MenuCard = ({ recipe }) => {
       onClick={handleNavigate}
     >
       <Toaster position="bottom-right" reverseOrder={false} />
-      <img
+      <img alt=""
         className="w-full h-4/5 object-cover"
         src={
           imageType

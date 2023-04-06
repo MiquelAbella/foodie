@@ -43,10 +43,9 @@ export const RecipeCard = ({ recipe }) => {
         >
           <MdOutlineRestaurant className="text-lg text-white" />
         </div>
-        <img
+        <img alt=""
           className="rounded-md w-full object-cover "
           src={`https://spoonacular.com/recipeImages/${recipe.id}-636x393.jpg`}
-          alt=""
         />
 
         <p

@@ -34,7 +34,7 @@ export const RandomRecipe = () => {
             </div>
           </div>
         ) : (
-          <img
+          <img alt=""
             className="w-80 md:w-96 h-3/5 p-6 object-contain"
             src={searchText}
           />

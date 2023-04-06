@@ -26,7 +26,7 @@ export const Ingredients = ({ data }) => {
         {data.extendedIngredients.map((ingredient, idx) => {
           return (
             <div key={ingredient.name} className=" flex flex-col items-center justify-between">
-              <img
+              <img alt=""
                 src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`}
                 className="h-2/3 object-scale-down"
               />
