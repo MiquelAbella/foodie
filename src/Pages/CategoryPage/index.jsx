@@ -34,8 +34,8 @@ export const CategoryPage = () => {
       </div>
       <div className="grid gap-6 grid-cols-1 px-4 md:px-0 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center w-4/5 min-h-screen">
         {isLoading ? (
-          categorySkeletonData.map((el, idx) => (
-            <CategoryRecipeCardSkeleton key={`${el}-${idx}`} />
+          categorySkeletonData.map((el) => (
+            <CategoryRecipeCardSkeleton key={el} />
           ))
         ) : data ? (
           data.map((recipe) => {
