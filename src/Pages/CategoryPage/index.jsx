@@ -44,10 +44,12 @@ export const CategoryPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
+    {data?.length ? 
+   
       <div className="bg-cyan-600 w-full mb-12">
         <h1
           className="text-[15vw] w-full text-center font-extrabold text-transparent  bg-contain bg-clip-text"
-          style={{ backgroundImage: `url(${filtered.img})` }}
+          style={{ backgroundImage: `${data.length && `url(${filtered.img})`}` }}
         >
           {category.toUpperCase()}
         </h1>
@@ -55,6 +57,7 @@ export const CategoryPage = () => {
           RECIPES
         </p>
       </div>
+       : <p className="absolute top-0 mt-[50vh]">Oooopsss... It seems that this category does not exist...</p> }
       <div className="grid gap-6 grid-cols-1 px-4 md:px-0 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center w-4/5 min-h-screen">
         {contents}
       </div>
