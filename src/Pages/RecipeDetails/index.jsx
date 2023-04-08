@@ -22,23 +22,27 @@ export const RecipeDetails = () => {
         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
       ).then((res) => res.json()),
   });
- 
+
   return (
-    <>
+    <div className="min-h-screen w-full">
       <HashLink to={prevRoute}>
         <div className="h-8 w-8 rounded-full bg-white fixed top-2 left-2 z-50 flex items-center justify-center">
           <RiArrowGoBackFill className="text-gray-500 text-xl" />
         </div>
       </HashLink>
-      {!isLoading && data && (
+      {!isLoading && data ? (
         <>
           <Header data={data} />
           <Ingredients data={data} />
           <Steps data={data} />
           <Recommendation data={data} />
         </>
+      ) : (
+        <p className="absolute bottom-0 right-0 left-0 mb-[50vh] text-center">
+          Oooops... it seems that this recipe does not exist...
+        </p>
       )}
       <ScrollTop />
-    </>
+    </div>
   );
 };
