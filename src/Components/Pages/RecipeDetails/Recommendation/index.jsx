@@ -1,5 +1,4 @@
 export const Recommendation = ({ data }) => {
-    console.log(data)
   if (!data.winePairing.pairingText) return;
   return (
     <div className="flex items-center justify-center pb-20">
