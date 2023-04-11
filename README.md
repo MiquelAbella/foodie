@@ -18,7 +18,7 @@ npm install
 
 You have to create a .env file and store an api key from spoonacular:
 
-API_KEY=xxxxxxxxxxxxxxxxxx
+VITE_API_KEY=xxxxxxxxxxxxxxxxxx
 
 ## Usage
 
